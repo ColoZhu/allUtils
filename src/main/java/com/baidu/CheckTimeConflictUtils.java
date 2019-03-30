@@ -16,7 +16,7 @@ public class CheckTimeConflictUtils {
     /**
      * @Param:
      * @Description: list自身查询有无时间冲突,
-     * 优化: 如果自身的list过大, j遍历不能从0开始,只需要往后面数据比较大小
+     * 优化1: 如果自身的list过大, j遍历不能从0开始,只需要往后面数据比较大小
      * @Author: zyf    2019/3/29
      */
     public static String checkSelf(List<TimeModel> list) {
@@ -29,10 +29,11 @@ public class CheckTimeConflictUtils {
             // long I_E = list.get(i).getEffectiveEndTime().getTime();
             Date I_S = list.get(i).getStartTime();
             Date I_E = list.get(i).getEndTime();
-            for (int j = 0; j < list.size(); j++) {
-                if (i == j) {
+           // for (int j = 0; j < list.size(); j++) {
+            for (int j = i+1; j < list.size(); j++) {
+               /* if (i == j) {
                     continue;  //自身不跟自身比较
-                }
+                }*/
                 Date J_S = list.get(j).getStartTime();
                 Date J_E = list.get(j).getEndTime();
                 //这里使用compareTo方法, 因为getTime()的时间不太准确
@@ -52,12 +53,13 @@ public class CheckTimeConflictUtils {
 
     /**
      * @Param: listNew 前端传的list
-     * @Param: listOld 数据库list
+     * @Param: listOld 数据库list,
+     * 优化2*****后端查询数据库可以根据前端的list里面最大时间和最小时间区间作为条件查询出来
      * @Description: 比较前端传的list跟数据库list有无时间冲突
      * @Author: zyf    2019/3/29
      */
     public static String checkTwoList(List<TimeModel> listNew, List<TimeModel> listOld) {
-        String res = null;
+        String res = null;  //没有冲突返回null,有冲突返回冲突的时间段
         for (int i = 0; i < listNew.size(); i++) {
             Date I_S = listNew.get(i).getStartTime();
             Date I_E = listNew.get(i).getEndTime();
@@ -70,7 +72,7 @@ public class CheckTimeConflictUtils {
                 if (jobIdNew != null && jobIdNew.longValue() == jobIdOld.longValue()) {
                     continue; // 前台如果是旧数据修改不能再跟自己比较
                 }
-
+                //compareTo返回结果-1 0 1 表示前者比后者<,=,>关系 ,下面的if判断涉及具体的怎样比较可以自行优化
                 if ((J_S.compareTo(I_S) == -1 && I_S.compareTo(J_E) == -1)
                         || (J_S.compareTo(I_E) == -1 && I_E.compareTo(J_E) == -1)
                         || J_E.compareTo(I_S) == 0 || J_S.compareTo(I_E) == 0
