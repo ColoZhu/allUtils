@@ -39,6 +39,8 @@ public class CheckTimeConflictUtils {
                 //这里使用compareTo方法, 因为getTime()的时间不太准确
                 if ((J_S.compareTo(I_S) == -1 && I_S.compareTo(J_E) == -1)
                         || (J_S.compareTo(I_E) == -1 && I_E.compareTo(J_E) == -1)
+                        || (I_S.compareTo(J_S) == -1 && J_S.compareTo(I_E) == -1)
+                        || (I_S.compareTo(J_E) == -1 && J_E.compareTo(I_E) == -1)
                         || J_E.compareTo(I_S) == 0 || J_S.compareTo(I_E) == 0
                         || J_E.compareTo(I_E) == 0 || J_S.compareTo(I_S) == 0) {
                     res =  dateToStr(list.get(i).getStartTime()) + " "
@@ -75,6 +77,8 @@ public class CheckTimeConflictUtils {
                 //compareTo返回结果-1 0 1 表示前者比后者<,=,>关系 ,下面的if判断涉及具体的怎样比较可以自行优化
                 if ((J_S.compareTo(I_S) == -1 && I_S.compareTo(J_E) == -1)
                         || (J_S.compareTo(I_E) == -1 && I_E.compareTo(J_E) == -1)
+                        || (I_S.compareTo(J_S) == -1 && J_S.compareTo(I_E) == -1)
+                        || (I_S.compareTo(J_E) == -1 && J_E.compareTo(I_E) == -1)
                         || J_E.compareTo(I_S) == 0 || J_S.compareTo(I_E) == 0
                         || J_E.compareTo(I_E) == 0 || J_S.compareTo(I_S) == 0) {
                     res = dateToStr(listNew.get(i).getStartTime()) + " "
