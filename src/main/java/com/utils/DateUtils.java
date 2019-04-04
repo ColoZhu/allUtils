@@ -10,7 +10,6 @@ public class DateUtils {
 
     @Test
     public void test1() {
-
         String s = longToDate(1577721600000L);
          System.out.println("s :" + s);
          //s :2019-12-31 00:00:00
