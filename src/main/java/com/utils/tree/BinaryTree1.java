@@ -2,7 +2,7 @@ package com.utils.tree;
 
 import java.util.Stack;
  //堆栈
-public class BinaryTree1 {
+public class BinaryTreeTest {
     public Node init() {//注意必须逆序建立，先建立子节点，再逆序往上建立，因为非叶子结点会使用到下面的节点，而初始化是按顺序初始化的，不逆序建立会报错
         Node J = new Node(8, null, null);
         Node H = new Node(4, null, null);
@@ -73,7 +73,7 @@ public class BinaryTree1 {
     }
 
     public static void main(String[] args) {
-        BinaryTree1 tree = new BinaryTree1();
+        BinaryTreeTest tree = new BinaryTreeTest();
         Node root = tree.init();
         System.out.println("先序遍历");
         tree.theFirstTraversal_Stack(root);
