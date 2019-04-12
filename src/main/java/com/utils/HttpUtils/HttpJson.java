@@ -12,6 +12,12 @@ import java.io.IOException;
 
 public class HttpJson {
 
+
+    /**
+     * @Param:
+     * @Description: http发送JSON对象
+     * @Author: zyf    2019/4/12
+     */
     public static String httpPostWithjson(String url, String json) throws IOException {
         String result = "";
         HttpPost httpPost = new HttpPost(url);
@@ -26,7 +32,7 @@ public class HttpJson {
             return result;
         } catch (Exception e) {
             e.printStackTrace();
-           // logger.error("异常:" + e.getMessage(), e);
+            // logger.error("异常:" + e.getMessage(), e);
         } finally {
             try {
                 httpClient.close();
