@@ -215,6 +215,7 @@ public class FileUtil {
             	String tempbyte = new String(cbuf, 0, length_);
             	if(skipEnter) {
             		tempbyte = tempbyte.replace("\n", "");
+            		// tempbyte = tempbyte.replace("'\n", "'");
             	}
                 sb.append(tempbyte);
             }

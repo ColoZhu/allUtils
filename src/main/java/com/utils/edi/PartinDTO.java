@@ -1,27 +1,14 @@
 package com.utils.edi;
 
+
 import java.util.List;
 
 public class PartinDTO {
-
-    /**
-     * 仓别（库区：ZQ1）
-     */
-    private String locZone;
-    /**
-     * 头部日期（180110）
-     */
-    private String headDate;
-    /**
-     * 头部时间（0651）
-     */
-    private String headTime;
-    /**
-     * 头部中唯一流水识别码（0051674）
-     */
-    private String headId;
-
-    private List<CustomerDto> customerDtoList;
+    private String locZone; // 仓别（库区：ZQ1）
+    private String headDate;  //头部日期（180110）
+    private String headTime; //头部时间（0651）
+    private String headId; //头部中唯一流水识别码（0051674）
+    private List<CustomerDto> customerDtoList; //供应商列表
 
     public String getLocZone() {
         return locZone;
@@ -64,7 +51,7 @@ public class PartinDTO {
     }
 
     public static class CustomerDto {
-        private String supplierNo;      //商品编码
+        private String supplierNo;      //供应商编码
         private String address;         //地址
         private String nameCn;          //中文名称
         private String nameEn;          //英文名称
