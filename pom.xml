@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>www.baidu.com</groupId>
-    <artifactId>baidu</artifactId>
+    <groupId>www.allUtils.com</groupId>
+    <artifactId>allUtils</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
@@ -78,6 +78,11 @@
             <groupId>org.mvel</groupId>
             <artifactId>mvel2</artifactId>
             <version>2.3.1.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.milyn/milyn-smooks-javabean -->
