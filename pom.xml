@@ -7,6 +7,13 @@
     <groupId>www.allUtils.com</groupId>
     <artifactId>allUtils</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <logback.version>1.1.7</logback.version>
+        <slf4j.version>1.7.21</slf4j.version>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
@@ -68,7 +75,6 @@
             <version>4.5.5</version>
         </dependency>
         <!-- ================== EDI ================== -->
-        <!-- ================== EDI ================== -->
         <dependency>
             <groupId>org.milyn.edi.unedifact</groupId>
             <artifactId>d96a-binding</artifactId>
@@ -85,46 +91,36 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.milyn/milyn-smooks-javabean -->
-       <!-- <dependency>
-            <groupId>org.milyn</groupId>
-            <artifactId>milyn-smooks-javabean</artifactId>
-            <version>1.7.0</version>
-        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/org.mule.edi/edi-parser -->
-     <!--   <dependency>
-            <groupId>org.mule.edi</groupId>
-            <artifactId>edi-parser</artifactId>
-            <version>2.2.2</version>
-        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/org.milyn.edi.unedifact/d96b-mapping -->
-       <!--<dependency>
-            <groupId>org.milyn.edi.unedifact</groupId>
-            <artifactId>d96a-mapping</artifactId>
-            <version>1.4</version>
-        </dependency>-->
-       <!-- <dependency>
-            <groupId>org.milyn.edi.unedifact</groupId>
-            <artifactId>d96a-binding</artifactId>
-            <version>1.6</version>
-        </dependency>-->
 
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
         <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.11.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.7</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.22</version>
         </dependency>
         <!-- <dependency>
             <groupId>org.milyn.edi.unedifact</groupId>
             <artifactId>d96a-binding</artifactId>
             <version>1.4</version>
         </dependency>-->
+
+        <!-- Logback 日志相关-->
+        <!--<dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>-->
+
     </dependencies>
 
 
