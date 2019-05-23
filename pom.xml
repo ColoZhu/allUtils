@@ -97,6 +97,9 @@
             <artifactId>lombok</artifactId>
             <version>1.16.22</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
+
         <!-- <dependency>
             <groupId>org.milyn.edi.unedifact</groupId>
             <artifactId>d96a-binding</artifactId>
