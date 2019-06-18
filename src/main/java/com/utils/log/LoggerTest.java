@@ -1,4 +1,4 @@
-package com.utils.lombok;
+package com.utils.log;
 
 
 import org.junit.Test;
